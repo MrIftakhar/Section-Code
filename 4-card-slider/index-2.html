@@ -1,0 +1,232 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    :root {
+        --primary-green: #31B099;
+        --text-dark: #1e293b;
+        --text-gray: #64748b;
+        --border-color: #e2e8f0;
+        --star-color: #E8D93D;
+    }
+
+    .testimonial-section {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 40px 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .swiper {
+        width: 100%;
+    }
+
+    .testimonial-card {
+    margin-left: 50px;
+        background: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 40px;
+        width: 100%;
+        max-width: 267px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+    }
+
+    .stars {
+        color: var(--star-color);
+        font-size: 30px;
+        display: flex;
+        gap: 2px;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .client-details h5 {
+        margin: 0;
+        color: var(--text-dark);
+        font-size: 0.975rem;
+        font-weight: 700;
+    }
+
+    .client-details p {
+        margin: 0;
+        color: var(--primary-green);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .review-text {
+        color: var(--text-gray);
+        line-height: 1.6;
+        font-size: 1rem;
+        margin: 0;
+        font-style: normal;
+    }
+
+    /* Pagination Dots Styling */
+    .swiper-pagination-bullet {
+        width: 30px;
+        height: 8px;
+        background: #e2e8f0;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--t);
+        width: 45px;
+    }
+</style>
+
+<div class="testimonial-section">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b4755df8f28f0172952013/1773434205284/review-author-1.png" alt="Megan" class="client-img">
+                        <div class="client-details">
+                            <h5>pebz13</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b476bfcc744527fb3d235c/1773434559890/review-author-2.png" alt="Evelyn" class="client-img">
+                        <div class="client-details">
+                            <h5>Evelyn</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b476c4fc76594c2a6902e4/1773434564498/review-author-3.png" alt="Robert" class="client-img">
+                        <div class="client-details">
+                            <h5>Robert</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b476c892e2c268a5ffaf33/1773434568710/review-author-4.png" alt="Leslie" class="client-img">
+                        <div class="client-details">
+                            <h5>Leslie</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b476ccefe87d59d4dcc8e5/1773434572532/review-author-5.png" alt="Marisol19" class="client-img">
+                        <div class="client-details">
+                            <h5>Marisol19</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b4770de2994e7908bb48d2/1773434637469/review-author-6.png" alt="Dan" class="client-img">
+                        <div class="client-details">
+                            <h5>Dan</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="review-text">"An orci nullam tempor sapien, eget orci gravida donec enim ipsum porta justo integer at odio velna auctor. Magna undo ipsum vitae purus ipsum primis in laoreet augue lectus"</p>
+                    <div class="client-info">
+                        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b4770db034664980990c33/1773434637398/review-author-7.png" alt="Peterson" class="client-img">
+                        <div class="client-details">
+                            <h5>Peterson</h5>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        centeredSlides: true,           // Centers the active slide in ALL views
+        centeredSlidesBounds: true,     // Prevents unwanted gaps at start/end (great with loop)
+
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                centeredSlides: false,   // Optional: On desktop with 4 slides → left-aligned row looks cleaner
+                spaceBetween: 30
+            },
+            768: {
+                slidesPerView: 1,        // Changed from 1.5 → full 2 cards + centered feels balanced (or keep 1.5 if you prefer peek effect)
+                centeredSlides: true,
+                spaceBetween: 30
+            },
+            0: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 20         // Slightly smaller gap on tiny phones
+            }
+        }
+    });
+</script>
