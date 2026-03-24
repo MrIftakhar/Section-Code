@@ -1,0 +1,60 @@
+<div class="image-shuffle-section">
+  <div class="shuffle-container">
+    <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b711eeda9bb66eb9db3072/1773605358940/card-1.png" alt="Image 1" class="shuffle-img active">
+    <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b711ee58ae313318dc3dac/1773605359152/card-2.png" alt="Image 2" class="shuffle-img">
+    <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b711eefb761d35ac0a8dee/1773605359299/card-3.png" alt="Image 3" class="shuffle-img">
+  </div>
+</div>
+
+<style>
+  .image-shuffle-section {
+    max-width: 500px;          /* ← change to your preferred max width */
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .shuffle-container {
+    position: relative;
+    width: 100%;
+    height: 600px;              /* ← change this to match your image height */
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .shuffle-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 0ms;
+  }
+
+  .shuffle-img.active {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.shuffle-img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    // Change image every 5 seconds
+    setInterval(showNextImage, 5000);
+
+    // Optional: start with first image visible immediately
+    images[0].classList.add('active');
+  });
+</script>
