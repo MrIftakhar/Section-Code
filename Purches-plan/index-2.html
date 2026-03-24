@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table - Center & 50% Width</title>
+    <style>
+        :root {
+            --primary-green: #31B099;
+            --dark-bg: #103d42;
+            --text-gray: #64748b;
+            --border-color: #e2e8f0;
+            --accent-yellow: #EDE597;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcfcfc;
+            margin: 0;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .first {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        /* Toggle Wrapper */
+        .pricing-toggle-wrapper {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            border-radius: 12px;
+            display: inline-flex;
+            gap: 5px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-tab-btn {
+            padding: 10px 30px;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-tab-btn.active {
+            background-color: var(--primary-green);
+            color: #ffffff;
+        }
+
+        /* Cards Container */
+        .pricing-cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            min-width: 1400px;
+            justify-content: center;
+            flex-wrap: wrap; /* Add wrapping for smaller screens */
+        }
+
+        /* Individual Pricing Cards */
+        .pricing-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px;
+            flex: 1;
+            display: flex;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .pricing-card.dark {
+            width: 100%;
+            background-color: var(--dark-bg);
+            color: #fff;
+            border: none;
+        }
+
+        .card-left {
+            flex: 1.2;
+            border-right: 1px solid var(--border-color);
+            padding-right: 20px;
+        }
+
+        .dark .card-left {
+            border-right-color: rgba(255,255,255,0.1);
+        }
+
+        .card-right {
+            flex: 1.5;
+            padding-left: 20px;
+        }
+
+        .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .price-wrapper {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .price-wrapper span {
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            font-weight: 400;
+        }
+
+        .select-btn {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 80px;
+            transition: background-color 0.3s ease;
+        }
+
+        .select-btn:hover {
+            background-color: #2c7e6d;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--accent-yellow);
+            color: #655F1C;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .pricing-cards-container {
+                width: 90%;
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-cards-container {
+                flex-direction: column;
+            }
+
+            .pricing-card {
+                flex-direction: column;
+            }
+
+            .card-left {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+
+            .card-right {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <div class="pricing-toggle-wrapper">
+            <button class="pricing-tab-btn active" onclick="updatePrice('monthly', this)">Monthly</button>
+            <button class="pricing-tab-btn" onclick="updatePrice('yearly', this)">Yearly</button>
+        </div>
+    </div>
+    <div class="pricing-cards-container">
+        <div class="pricing-card">
+            <div class="card-left">
+                <div class="plan-name">Starter Standard</div>
+                <div class="price-wrapper">$<span id="price-std">85,50</span><span>/Month</span></div>
+                <button class="select-btn">Select Plan</button>
+            </div>
+            <div class="card-right">
+                <ul class="features-list">
+                    <li><span style="color:var(--primary-green)">✓</span> Full digital wallet access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Dashboard analytics access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Refundable package</li>
+                    <li><span style="color:var(--primary-green)">✓</span> 24/7 Customer service</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-card dark">
+            <div class="popular-badge">POPULAR</div>
+            <div class="card-left">
+                <div class="plan-name">Starter Premium</div>
+                <div class="price-wrapper">$<span id="price-pre">120,50</span><span>/Month</span></div>
+                <button class="select-btn">Select Plan</button>
+            </div>
+            <div class="card-right">
+                <ul class="features-list">
+                    <li><span>✓</span> Full digital wallet access</li>
+                    <li><span>✓</span> Dashboard analytics access</li>
+                    <li><span>✓</span> Refundable package</li>
+                    <li><span>✓</span> Investment planning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice(type, btn) {
+            document.querySelectorAll('.pricing-tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const stdPrice = document.getElementById('price-std');
+            const prePrice = document.getElementById('price-pre');
+
+            if (type === 'yearly') {
+                stdPrice.innerText = "850,00";
+                prePrice.innerText = "1200,00";
+            } else {
+                stdPrice.innerText = "85,50";
+                prePrice.innerText = "120,50";
+            }
+        }
+    </script>
+</body>
+</html>
