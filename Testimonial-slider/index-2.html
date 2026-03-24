@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+  :root {
+    --primary-green: #058ee3;
+  }
+
+  .testimonial-section {
+    width: 100%;
+    max-width: 630px;
+    margin: 0 auto;
+    background: #06263f;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .image {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .review-text {
+    color: #9d9aad;
+    line-height: 1.7;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .client-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 15px;
+  }
+
+  .client-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .client-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .client-details h4 {
+    margin: 0;
+    color: #06263f;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .client-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #9d9aad;
+  }
+
+  /* Swiper & Pagination Fix */
+  .swiper {
+    width: 100%;
+    padding-bottom: 50px;     /* Only bottom padding for pagination space */
+  }
+
+  .swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-top: 10px;         /* Small gap between card and dots */
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #e2e8f0;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--primary-green);
+    width: 12px;
+    height: 12px;
+  }
+</style>
+
+<div class="testimonial-section">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c188f0ee84353965e525/1774305672270/quote+%281%29.png" alt="quote" class="image">
+          <p class="review-text">
+            “I had so much fun working with your technical specialists on my business project. We will come back soon
+            for more productive ideas and designs! Highly recommend you to everyone.“
+          </p>
+          <div class="client-info">
+            <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c63de612667fae11557b/1774306877777/image_1774305298959.png" alt="Charles Wade" class="client-img">
+            <div class="client-details">
+              <h4>Charles Wade</h4>
+              <p>CEO, Hoverex</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c188f0ee84353965e525/1774305672270/quote+%281%29.png" alt="quote" class="image">
+          <p class="review-text">
+            “What a great way to start your own company, an agency or an online store! With these guys, you will be able
+            to implement all your ideas in real life, an app or a website. Thanks a lot!”
+          </p>
+          <div class="client-info">
+            <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c8b51db0b5354da5d7b8/1774307509244/image_1774305279585.png" alt="Erica Green" class="client-img">
+            <div class="client-details">
+              <h4>Erica Green</h4>
+              <p>CEO, WealthCo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c188f0ee84353965e525/1774305672270/quote+%281%29.png" alt="quote" class="image">
+          <p class="review-text">
+            “I liked working with these creative guys, who know everything about quality design, innovations, and
+            usability. Thank you for your hard work, we are definitely coming back for more!”
+          </p>
+          <div class="client-info">
+            <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69c1c935d65f072b9085b83b/1774307637373/image_1774305293228.png" alt="Kara Devlin" class="client-img">
+            <div class="client-details">
+              <h4>Kara Devlin</h4>
+              <p>CEO, Asona</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0:    { slidesPerView: 1 },
+      768:  { slidesPerView: 1.1 },
+      1024: { slidesPerView: 1 }
+    }
+  });
+</script>
