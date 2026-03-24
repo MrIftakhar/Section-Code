@@ -1,0 +1,225 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    :root {
+        --primary-green: #31B099;
+        --dark-card-bg: #113D42; /* আপনার ইমেজের ডার্ক শেড */
+        --text-white: #ffffff;
+    }
+
+    .blog-slider-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+    }
+
+    .blog-swiper {
+        width: 100%;
+        padding-bottom: 80px !important;
+    }
+
+    .blog-card {
+        background: var(--dark-card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    .card-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 250px;
+    }
+
+    .card-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .category-tag {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background: var(--primary-green);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .card-content {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: 1;
+    }
+
+    .card-title {
+        color: var(--text-white);
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    .card-meta {
+        color: #94a3b8;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .author-name {
+        color: var(--primary-green);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    /* Navigation Buttons - Image এর মত */
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .nav-btn {
+        width: 50px;
+        height: 40px;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: transparent;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+        background: var(--primary-green);
+        border-color: var(--primary-green);
+    }
+
+    .nav-btn.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="blog-slider-section">
+    <div class="swiper blog-swiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="blog-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://static1.squarespace.com/static/699b45c0a9a0b6592a340d7b/t/699e007225941d69dc291305/1771962482406/young-woman-and-piggy-bank-to-planning-growing-saving-strategy-with-pile-coins-for-future-plan-fund-e1684637173535.jpg" alt="Blog 1">
+                        <span class="category-tag">Management</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Wealth and Happiness: Achieving a Balanced and Fulfilling Life</h3>
+                        <div class="card-meta">
+                            By : <span class="author-name">JOHN DOE</span> • May 16, 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="blog-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://static1.squarespace.com/static/699b45c0a9a0b6592a340d7b/t/699e00d5fa0d342929f63dde/1771962581782/document-with-financial-data-e1684637187444+%281%29.jpg" alt="Blog 2">
+                        <span class="category-tag">Strategy</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Aligning Your Finances with Your Values for True Wealth</h3>
+                        <div class="card-meta">
+                            By : <span class="author-name">JOHN DOE</span> • May 16, 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="blog-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://static1.squarespace.com/static/699b45c0a9a0b6592a340d7b/t/699e01ccdfc2b72ebd3978d7/1771962829148/wealth-e1684637255885.jpg" alt="Blog 3">
+                        <span class="category-tag">Wealth</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Building Wealth from Scratch: Practical Tips and Strategies</h3>
+                        <div class="card-meta">
+                            By : <span class="author-name">JOHN DOE</span> • May 16, 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="blog-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://static1.squarespace.com/static/699b45c0a9a0b6592a340d7b/t/699e01ccdfc2b72ebd3978d7/1771962829148/wealth-e1684637255885.jpg" alt="Blog 4">
+                        <span class="category-tag">Investment</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Market Analysis: Understanding Current Trends</h3>
+                        <div class="card-meta">
+                            By : <span class="author-name">JOHN DOE</span> • May 16, 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="swiper-slide">
+                <div class="blog-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://static1.squarespace.com/static/699b45c0a9a0b6592a340d7b/t/699e00d5fa0d342929f63dde/1771962581782/document-with-financial-data-e1684637187444+%281%29.jpg" alt="Blog 2">
+                        <span class="category-tag">Strategy</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Aligning Your Finances with Your Values for True Wealth</h3>
+                        <div class="card-meta">
+                            By : <span class="author-name">JOHN DOE</span> • May 16, 2023
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-container">
+            <button class="nav-btn prev-btn">❮</button>
+            <button class="nav-btn next-btn">❯</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var blogSwiper = new Swiper(".blog-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        loop: false,
+        navigation: {
+            nextEl: ".next-btn",
+            prevEl: ".prev-btn",
+        },
+        breakpoints: {
+            1024: { slidesPerView: 3 }, // ডেস্কটপে ৩ টা
+            768: { slidesPerView: 2 },  // ট্যাবে ২ টা
+            0: { slidesPerView: 1 }     // মোবাইলে ১ টা
+        }
+    });
+</script>
