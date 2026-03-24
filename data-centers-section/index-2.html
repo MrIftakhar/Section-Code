@@ -1,0 +1,223 @@
+<div class="data-centers-section">
+  <h2>Our Data Center Locations</h2>
+  <p class="subtitle">Start with the ideal domain, including free lifetime domain privacy protection.</p>
+
+  <div class="continent-tabs">
+    <button class="tab" data-continent="us">United States</button>
+    <button class="tab active" data-continent="europe">Europe</button>
+    <button class="tab" data-continent="asia">Asia</button>
+    <button class="tab" data-continent="africa">Africa</button>
+    <button class="tab" data-continent="middle-east">Middle East</button>
+  </div>
+
+  <div class="map-container">
+    <div class="map-background"></div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="map-tooltip"></div>
+
+    <!-- 7 Markers – positions exactly as you provided -->
+    <div class="markers">
+      <div class="marker" style="left: 10%; top: 15%;" data-tooltip="Alberta, Canada" data-continent="us"></div>
+      <div class="marker" style="left: 17%; top: 35%;" data-tooltip="New York, USA" data-continent="us"></div>
+      <div class="marker" style="left: 31%; top: 65%;" data-tooltip="Natal, Brazil" data-continent="us"></div>
+      <div class="marker" style="left: 45%; top: 48%;" data-tooltip="Rabat, Morocco" data-continent="africa"></div>
+      <div class="marker" style="left: 51%; top: 21%;" data-tooltip="Berlin, Germany" data-continent="europe"></div>
+      <div class="marker" style="left: 75%; top: 38%;" data-tooltip="Dhaka, BD" data-continent="asia"></div>
+      <div class="marker" style="left: 92%; top: 77%;" data-tooltip="Victoria, Australia" data-continent="asia"></div>
+    </div>
+  </div>
+
+  <a href="" class="pricing-link">See Pricing →</a>
+</div>
+
+<style>
+  .data-centers-section {
+    color: white;
+    background: #1a1118;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 16px;
+    max-width: 1200px;
+    margin: 40px auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h2 {
+    font-size: 48px;
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: #b0a8c0;
+    margin: 0 0 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .continent-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: #2a1b4d;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab.active,
+  .tab:hover {
+    background: #7c3aed;
+  }
+
+  .map-container {
+    position: relative;
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto 40px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .map-background {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b5fd2988bb4f694c46808a/1773534506589/map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .markers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .marker {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #34d399;
+    border: 3px solid #10b981;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.7);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.25s ease;
+  }
+
+  .marker:hover {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 24px rgba(52, 211, 153, 1);
+    z-index: 5;
+  }
+
+  .tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    transform: translate(-50%, -140%);
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+
+  .pricing-link {
+    display: inline-block;
+    color: #7c3aed;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .pricing-link:hover {
+    color: #a78bfa;
+  }
+
+  @media (max-width: 768px) {
+    h2 { font-size: 36px; }
+    .subtitle { font-size: 16px; }
+    .tab { padding: 10px 20px; font-size: 14px; }
+    .map-container { height: 360px; }
+    .marker { width: 12px; height: 12px; border-width: 2px; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const markers = document.querySelectorAll('.marker');
+    const tooltip = document.getElementById('map-tooltip');
+    const mapContainer = document.querySelector('.map-container');
+    const tabs = document.querySelectorAll('.tab');
+
+    let activeContinent = 'europe'; // default active continent
+
+    // Update tooltip only for markers matching active continent
+    function updateTooltipBehavior() {
+      markers.forEach(marker => {
+        const markerContinent = marker.getAttribute('data-continent');
+
+        // Remove old listeners to prevent duplicates
+        marker.replaceWith(marker.cloneNode(true));
+      });
+
+      // Add fresh listeners only to matching markers
+      document.querySelectorAll('.marker').forEach(marker => {
+        const markerContinent = marker.getAttribute('data-continent');
+
+        marker.addEventListener('mouseenter', (e) => {
+          if (markerContinent === activeContinent) {
+            const text = e.target.getAttribute('data-tooltip') || 'Location';
+            tooltip.textContent = `© ${text}`;
+            tooltip.style.opacity = '1';
+
+            const rect = e.target.getBoundingClientRect();
+            const mapRect = mapContainer.getBoundingClientRect();
+            tooltip.style.left = (rect.left - mapRect.left + rect.width / 2) + 'px';
+            tooltip.style.top = (rect.top - mapRect.top) + 'px';
+          }
+        });
+
+        marker.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = '0';
+        });
+      });
+    }
+
+    // Tab click: change active continent and refresh tooltip behavior
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        activeContinent = tab.getAttribute('data-continent');
+        updateTooltipBehavior();
+      });
+    });
+
+    // Initial setup (Europe active by default)
+    updateTooltipBehavior();
+  });
+</script>
