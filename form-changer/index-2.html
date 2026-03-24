@@ -1,0 +1,189 @@
+<div class="early-access-form">
+  <div class="form-top">
+    <h2 class="form-title">Get Early Access</h2>
+    <form id="earlyAccessForm" class="access-form">
+
+      <!-- Individuals Form -->
+      <div id="individualsForm" class="form-variant active">
+        <input type="text" id="ind-name" placeholder="Name" required>
+        <input type="email" id="ind-email" placeholder="Email" required>
+        <input type="url" id="ind-website" placeholder="Website (optional)">
+      </div>
+
+      <!-- Companies Form -->
+      <div id="companiesForm" class="form-variant">
+        <input type="text" id="comp-name" placeholder="Company Name" required>
+        <input type="email" id="comp-email" placeholder="Email" required>
+        <input type="url" id="comp-website" placeholder="Website (optional)">
+      </div>
+
+      <!-- Common Submit Button -->
+      <button type="submit" class="signup-button">Sign up</button>
+    </form>
+  </div>
+
+  <!-- Form Container -->
+
+
+  <!-- Toggle Buttons -->
+  <div class="toggle-buttons">
+    <button id="toggleIndividuals" class="toggle-btn active">for individuals</button>
+    <button id="toggleCompanies" class="toggle-btn">for companies</button>
+  </div>
+</div>
+
+<style>
+  /* Main Container */
+  .early-access-form {
+    max-width: 420px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+  }
+
+  /* Title */
+  .form-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 32px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .form-top {
+    padding: 40px 30px 30px;
+  }
+
+  /* Form Inputs */
+  .access-form input {
+    width: 100%;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    background: #fff;
+  }
+
+  .access-form input:focus {
+    outline: none;
+    border-color: #06263f;
+  }
+
+  /* Sign Up Button */
+  .signup-button {
+    width: 100%;
+    padding: 16px;
+    background: #ffbb00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s ease;
+  }
+
+  .signup-button:hover {
+    background: #058ee3;
+  }
+
+  /* Toggle Buttons */
+  .toggle-buttons {
+    display: flex;
+    margin-top: 32px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .toggle-btn {
+    flex: 1;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #ffffff;
+    color: #052036;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .toggle-btn.active {
+    background: #052036;
+    color: #9d9aad;
+  }
+  .toggle-btn.active:hover{
+    background: #fff;
+    color: #052036;
+  }
+
+  /* Hide inactive form */
+  .form-variant {
+    display: none;
+  }
+
+  .form-variant.active {
+    display: block;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .early-access-form {
+      margin: 20px 15px;
+      padding: 30px 20px 25px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const indBtn = document.getElementById('toggleIndividuals');
+    const compBtn = document.getElementById('toggleCompanies');
+    const indForm = document.getElementById('individualsForm');
+    const compForm = document.getElementById('companiesForm');
+    const mainForm = document.getElementById('earlyAccessForm');
+
+    function switchToIndividuals() {
+      indForm.classList.add('active');
+      compForm.classList.remove('active');
+      indBtn.classList.add('active');
+      compBtn.classList.remove('active');
+    }
+
+    function switchToCompanies() {
+      compForm.classList.add('active');
+      indForm.classList.remove('active');
+      compBtn.classList.add('active');
+      indBtn.classList.remove('active');
+    }
+
+    indBtn.addEventListener('click', switchToIndividuals);
+    compBtn.addEventListener('click', switchToCompanies);
+
+    // Form submission (demo)
+    mainForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const isCompany = compForm.classList.contains('active');
+      const nameField = isCompany ?
+        document.getElementById('comp-name').value :
+        document.getElementById('ind-name').value;
+
+      const emailField = isCompany ?
+        document.getElementById('comp-email').value :
+        document.getElementById('ind-email').value;
+
+      alert(`Thank you! ${isCompany ? 'Company' : 'Individual'} "${nameField}" has been signed up with email: ${emailField}`);
+
+      // Here you can connect to Squarespace form handling, Zapier, Make.com, or your backend
+      // For Squarespace, you can also use their native form block and enhance with this JS
+    });
+  });
+</script>
