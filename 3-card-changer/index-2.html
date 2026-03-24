@@ -1,0 +1,236 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+  :root {
+    --primary-green: #058ee3;
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --border-color: #e2e8f0;
+    --star-color: #E8D93D;
+  }
+
+  /* Testimonial Section */
+  .testimonial-section {
+    width: 100%;
+    max-width: 1440px;
+    /* Increase max-width for even larger cards */
+    height: auto;
+    margin: 0 auto;
+    padding: 60px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+
+  /* Testimonial Card */
+  .testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 36px;
+    /* Increased padding for even larger cards */
+    height: 400px;
+    /* Increased height */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+  }
+
+  .more-info {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    align-self: center;
+    margin-top: 20px;
+  }
+  .more-info:hover{
+    color: #058ee3;
+  }
+
+  /* Client Info Section */
+  .client-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .client-img {
+    width: 50px;
+    /* Increased image size */
+    height: 50px;
+    /* Increased image size */
+    object-fit: cover;
+  }
+
+  /* Client Details */
+  .client-details h4 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 24px;
+    /* Larger font for client name */
+    font-weight: 600;
+  }
+
+  /* Review Text */
+  .review-text {
+    color: #9d9aad;
+    line-height: 1.6;
+    font-size: 18px;
+    /* Larger text */
+    margin: 0;
+    font-style: normal;
+  }
+  /* Swiper styles */
+  .swiper {
+    width: 100%;
+    padding-top: 0 !important;
+    margin: 0;
+    /* Remove extra padding */
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #e2e8f0;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--primary-green);
+    width: 10px;
+  }
+</style>
+
+<div class="testimonial-section">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+
+          <div class="client-info">
+            <img
+              src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b9af7f3a4fee15490f221e/1773776767072/image_1773776754276.png"
+              alt="Megan" class="client-img">
+            <div class="client-details">
+              <h4>Evernote</h4>
+            </div>
+          </div>
+          <p class="review-text">Ensure a smooth and successful launch using the technical assistance of our
+            specialists. Our employees will help you at all stages of the project, starting from the early stage of
+            technology assessment and accompanying you throughout the integration cycle.</p>
+          <a href="#" class="more-info">More Info</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+
+          <div class="client-info">
+            <img
+              src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b9b03810a85005016865d9/1773776952936/image_1773776912732.png"
+              alt="Michael" class="client-img">
+            <div class="client-details">
+              <h4>Slack</h4>
+            </div>
+          </div>
+          <p class="review-text">Ensure a smooth and successful launch using the technical assistance of our
+            specialists. Our employees will help you at all stages of the project, starting from the early stage of
+            technology assessment and accompanying you throughout the integration cycle.</p>
+          <a href="#" class="more-info">More Info</a>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+
+          <div class="client-info">
+            <img
+              src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b9ad5409717136541e413d/1773776212841/image_1773774501379.png"
+              alt="Client" class="client-img">
+            <div class="client-details">
+              <h4>Swift</h4>
+            </div>
+          </div>
+          <p class="review-text">Ensure a smooth and successful launch using the technical assistance of our
+            specialists. Our employees will help you at all stages of the project, starting from the early stage of
+            technology assessment and accompanying you throughout the integration cycle.</p>
+          <a href="#" class="more-info">More Info</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+
+          <div class="client-info">
+            <img
+              src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b9b0ef0bcd79116d843308/1773777135121/image_1773777081816.png"
+              alt="Client" class="client-img">
+            <div class="client-details">
+              <h4>Open Source</h4>
+            </div>
+          </div>
+          <p class="review-text">Ensure a smooth and successful launch using the technical assistance of our
+            specialists. Our employees will help you at all stages of the project, starting from the early stage of
+            technology assessment and accompanying you throughout the integration cycle.</p>
+          <a href="#" class="more-info">More Info</a>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+
+          <div class="client-info">
+            <img
+              src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b9b13122686817cf4499f7/1773777201999/image_1773777185118.png"
+              alt="Client" class="client-img">
+            <div class="client-details">
+              <h4>Analytics</h4>
+            </div>
+          </div>
+          <p class="review-text">Ensure a smooth and successful launch using the technical assistance of our
+            specialists. Our employees will help you at all stages of the project, starting from the early stage of
+            technology assessment and accompanying you throughout the integration cycle.</p>
+          <a href="#" class="more-info">More Info</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      // Desktop: 2 cards
+      1024: {
+        slidesPerView: 3,
+      },
+      // Tablet/Small Desktop: 1.5 cards
+      768: {
+        slidesPerView: 1.5,
+      },
+      // Mobile: 1 card
+      0: {
+        slidesPerView: 1,
+      }
+    }
+  });
+</script>
