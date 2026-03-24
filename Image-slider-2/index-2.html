@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Logo Slider - Step Animation</title>
+  <style>
+    /* স্লাইডারের মেইন কন্টেইনার */
+    .elegant-logo-slider-container-2 {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+    }
+
+    /* ট্র্যাক যেখানে লোগোগুলো মুভ করবে */
+    .elegant-logo-slider-track-2 {
+      display: flex;
+      /* ১২টি মুভমেন্টের জন্য মোট ১২ সেকেন্ড সময় সেট করা হয়েছে */
+      animation: elegantStepSlide 12s ease-in-out infinite;
+      width: calc(260px * 12);
+    }
+
+    /* প্রতিটি লোগো আইটেম */
+    .elegant-logo-item-2 {
+      flex-shrink: 0;
+      width: 200px;
+      height: 100px;
+      margin: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .elegant-logo-placeholder-2 {
+      width: 180px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.4;
+      /* শুরুতে হালকা থাকবে */
+      transition: opacity 0.3s ease;
+      overflow: hidden;
+    }
+
+    .elegant-logo-placeholder-2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(30%) brightness(90%);
+    }
+
+    /* হোভার করলে অপাসিটি বাড়বে */
+    .elegant-logo-item-2:hover .elegant-logo-placeholder-2 {
+      opacity: 2;
+    }
+
+    /* ০.৫ সেকেন্ড পর পর স্লাইড হওয়ার লজিক (Step Animation) */
+    @keyframes elegantStepSlide {
+
+      /* প্রতিটি ধাপ: মুভমেন্ট (০.৫ সে) + বিরতি (০.৫ সে) */
+      0%,
+      8.33% {
+        transform: translateX(0);
+      }
+
+      12.5%,
+      20.83% {
+        transform: translateX(calc(-260px * 1));
+      }
+
+      25%,
+      33.33% {
+        transform: translateX(calc(-260px * 2));
+      }
+
+      37.5%,
+      45.83% {
+        transform: translateX(calc(-260px * 3));
+      }
+
+      50%,
+      58.33% {
+        transform: translateX(calc(-260px * 4));
+      }
+
+      62.5%,
+      70.83% {
+        transform: translateX(calc(-260px * 5));
+      }
+
+      75%,
+      83.33% {
+        transform: translateX(calc(-260px * 6));
+      }
+
+      87.5%,
+      95.83% {
+        transform: translateX(calc(-260px * 7));
+      }
+
+      100% {
+        transform: translateX(calc(-260px * 8));
+      }
+    }
+
+    /* হোভার করলে স্লাইডার থেমে যাবে */
+    .elegant-logo-slider-container-2:hover .elegant-logo-slider-track-2 {
+      animation-play-state: paused;
+    }
+
+    /* মোবাইল রেসপন্সিভ */
+    @media (max-width: 768px) {
+      .elegant-logo-item-2 {
+        width: 160px;
+        margin: 0 20px;
+      }
+
+      .elegant-logo-slider-track-2 {
+        width: calc(200px * 12);
+      }
+
+      @keyframes elegantStepSlide {
+
+        0%,
+        8.33% {
+          transform: translateX(0);
+        }
+
+        12.5%,
+        20.83% {
+          transform: translateX(calc(-200px * 1));
+        }
+
+        25%,
+        33.33% {
+          transform: translateX(calc(-200px * 2));
+        }
+
+        37.5%,
+        45.83% {
+          transform: translateX(calc(-200px * 3));
+        }
+
+        50%,
+        58.33% {
+          transform: translateX(calc(-200px * 4));
+        }
+
+        62.5%,
+        70.83% {
+          transform: translateX(calc(-200px * 5));
+        }
+
+        75%,
+        83.33% {
+          transform: translateX(calc(-200px * 6));
+        }
+
+        100% {
+          transform: translateX(calc(-200px * 7));
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="elegant-logo-slider-container-2">
+    <div class="elegant-logo-slider-track-2">
+
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4ae7717d6d17768367/1773621066370/client1.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a7684ad0d52e0af8d/1773621066365/client2.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4ac143947af4913844/1773621066371/client3.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a736702084347ad22/1773621066373/client4.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a288a097c635e65f7/1773621066369/client5.png">
+        </div>
+      </div>
+
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4ae7717d6d17768367/1773621066370/client1.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a7684ad0d52e0af8d/1773621066365/client2.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4ac143947af4913844/1773621066371/client3.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a736702084347ad22/1773621066373/client4.png">
+        </div>
+      </div>
+      <div class="elegant-logo-item-2">
+        <div class="elegant-logo-placeholder-2"><img
+            src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b74f4a288a097c635e65f7/1773621066369/client5.png">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
