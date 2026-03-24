@@ -1,0 +1,193 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+    :root {
+        --primary-green: #31B099;
+        --text-dark: #1e293b;
+        --text-gray: #64748b;
+        --border-color: #e2e8f0;
+        --star-color: #E8D93D;
+    }
+
+    .testimonial-section {
+        width: 100%;
+        max-width: 800px; /* আপনার আগের সেকশনের সাথে মিল রেখে */
+        margin: 0 auto;
+        padding: 40px 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .swiper {
+        width: 100%;
+        padding-bottom: 50px !important;
+    }
+
+    .testimonial-card {
+        background: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 40px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        box-sizing: border-box;
+    }
+
+    .stars {
+        color: var(--star-color);
+        font-size: 30px;
+        display: flex;
+        gap: 2px;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .client-details h4 {
+        margin: 0;
+        color: var(--text-dark);
+        font-size: 1.2rem;
+        font-weight: 700;
+ 
+    }
+
+    .client-details p {
+        margin: 0;
+        color: var(--primary-green);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .review-text {
+        color: var(--text-gray);
+        line-height: 1.6;
+        font-size: 1.1rem;
+        margin: 0;
+        font-style: normal;
+    }
+
+    /* Pagination Dots Styling */
+    .swiper-pagination-bullet {
+        width: 30px;
+        height: 8px;
+        background: #e2e8f0;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--primary-green);
+        width: 45px;
+    }
+</style>
+
+<div class="testimonial-section">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Megan" class="client-img">
+                        <div class="client-details">
+                            <h4>Megan Blair</h4>
+                            <p>CEO Blucorp</p>
+                        </div>
+                    </div>
+                    <p class="review-text">"Managing my finances has always been a challenge for me, but this money management changed my financial situation. They manage my wealth, make comprehensive plans and more."</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Michael" class="client-img">
+                        <div class="client-details">
+                            <h4>Michael Neukom</h4>
+                            <p>Programmer</p>
+                        </div>
+                    </div>
+                    <p class="review-text">"Thanks to their guidance, I have not only improved my budgeting and saving habits but also achieved significant financial accomplishments. Thank you for helping me manage my wealth."</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Client" class="client-img">
+                        <div class="client-details">
+                            <h4>Sarah Jenkins</h4>
+                            <p>Designer</p>
+                        </div>
+                    </div>
+                    <p class="review-text">"The strategic planning provided was beyond my expectations. My investments are now performing better than ever. Highly recommend their professional team,Their dashboard and customer."</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150" alt="Client" class="client-img">
+                        <div class="client-details">
+                            <h4>John Doe</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                    <p class="review-text">"Managing wealth is stress-free now. Their dashboard and customer service are top-notch. Truly a life-changing financial partner.Their dashboard and customer service are top-notch."</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            // Desktop: 2 cards
+            1024: {
+                slidesPerView: 2,
+            },
+            // Tablet/Small Desktop: 1.5 cards
+            768: {
+                slidesPerView: 1.5,
+            },
+            // Mobile: 1 card
+            0: {
+                slidesPerView: 1,
+            }
+        }
+    });
+</script>
