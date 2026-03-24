@@ -1,0 +1,149 @@
+<div class="custom-tabs">
+
+
+
+  <!-- Tab Contents -->
+  <div class="tab-content">
+      <!-- Tab Buttons -->
+  <div class="tab-buttons">
+    <button class="tab-button active" data-tab="payments">Payments</button>
+    <button class="tab-button" data-tab="customers">Customers</button>
+    <button class="tab-button" data-tab="subscriptions">Subscriptions</button>
+  </div>
+
+    <!-- Payments Content (shown by default) -->
+    <div id="payments" class="tab-pane active">
+      <pre><code>1  public class Main {
+2    public static void main(String[] args) {
+3      System.out.println("Hello, World!");
+4    }
+5  }
+6
+7
+8
+9
+10</code></pre>
+    </div>
+
+    <!-- Customers Content -->
+    <div id="customers" class="tab-pane">
+           <pre><code>1  “fields”: {
+2    “productName”: “Product Name”,
+3      “slug”: “product-name-slug”,
+4   “image”: [
+5  “sys”: {
+6   “type”: “Link”,
+7   “linkType”: “Asset”
+8    }
+9   ]
+10 } </code></pre>
+    </div>
+
+    <!-- Subscriptions Content -->
+    <div id="subscriptions" class="tab-pane">
+           <pre><code>1  “fields”: {
+2    “productName”: “item Name”,
+3      “slug”: “item-slug”,
+4   “image”: [
+5  “sys”: {
+6   “type”: “Link”,
+7
+8    }
+9   ]
+10 } </code></pre>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* =============== STYLING =============== */
+.custom-tabs {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: monospace, sans-serif;
+  max-width: 100%;
+}
+
+.tab-buttons {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #1f2937;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  color: #058ee3;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab-button:hover {
+  color: #fff;
+  background: #1f2937;
+}
+
+.tab-button.active {
+  background: #052036;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 0px 20px 20px 20px;
+
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.tab-pane pre {
+  background: #052036;
+  padding: 20px;
+    border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-x: auto;
+  margin: 0;
+  color: #e0f2fe;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Optional: Make it look even closer to your IDE screenshot */
+.tab-pane code {
+  font-family: 'Menlo', 'Monaco', monospace;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.tab-button');
+  const panes = document.querySelectorAll('.tab-pane');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active from all buttons and panes
+      buttons.forEach(btn => btn.classList.remove('active'));
+      panes.forEach(pane => pane.classList.remove('active'));
+
+      // Activate clicked button and corresponding pane
+      button.classList.add('active');
+      const tabId = button.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+});
+</script>
