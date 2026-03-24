@@ -1,0 +1,176 @@
+<div class="fanned-testimonial-slider">
+  <div class="fan-stack" id="fanStack">
+
+    <!-- Card 1 (front) -->
+    <div class="fan-card" data-index="0">
+      <div class="quote-text">“They took the time to understand my brand and target audience, and developed a marketing strategy that perfectly captured our essence. Their creative campaigns led to a significant increase in sales, and their expertise helped us secure a valuable partnership with another company"</div>
+      <div class="author-info">
+        <div class="author">Andrew Colley<br><span>ADAMA Software</span></div>
+        <div class="quote-circle"><img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b83e1e8c9b79703a6dfc3c/1773682206754/quote.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="fan-card" data-index="1">
+      <div class="quote-text">"They truly grasped the heart of our brand and who we’re trying to reach. The marketing plan they created was spot on, reflecting our identity perfectly. Their innovative ideas boosted our sales noticeably and even helped us land a key partnership."</div>
+      <div class="author-info">
+        <div class="author">Ethan Miller<br><span>Novo Software</span></div>
+        <div class="quote-circle"><img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b83e1e8c9b79703a6dfc3c/1773682206754/quote.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="fan-card" data-index="2">
+      <div class="quote-text">"From the start, they made an effort to really understand our business and audience. The strategy they built felt tailor-made, and the campaigns brought in great results. We saw a clear spike in sales and even formed a new, strategic collaboration thanks to their efforts."</div>
+      <div class="author-info">
+        <div class="author">David Anderson<br><span>ADOBE Software</span></div>
+        <div class="quote-circle"><img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b83e1e8c9b79703a6dfc3c/1773682206754/quote.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="fan-card" data-index="3">
+      <div class="quote-text">"Their team took the initiative to dive deep into our brand story and audience needs. What they delivered was not just creative, but highly effective — our sales jumped, and we were able to form a meaningful alliance with another company."</div>
+      <div class="author-info">
+        <div class="author">James Carterr<br><span>APP Developer</span></div>
+        <div class="quote-circle"><img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b83e1e8c9b79703a6dfc3c/1773682206754/quote.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="fan-card" data-index="4">
+      <div class="quote-text">"They went above and beyond to connect with our brand vision and target market. The marketing strategy they designed resonated strongly with our audience, driving impressive sales growth and opening doors to a major partnership opportunity."</div>
+      <div class="author-info">
+        <div class="author">Michael Roberts<br><span>Business Analyst</span></div>
+        <div class="quote-circle"><img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b83e1e8c9b79703a6dfc3c/1773682206754/quote.png" alt=""></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .fanned-testimonial-slider {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .fan-stack {
+    position: relative;
+    height: 540px;
+    perspective: 1800px;
+    perspective-origin: 30% 40%;
+  }
+
+  .fan-card {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 320px;
+    min-height: 400px;
+    background: linear-gradient(135deg, #1a1633, #0f0b22);
+    border-radius: 24px;
+    padding: 48px 40px 100px;
+    box-shadow: 0 20px 70px rgba(0,0,0,0.75);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    color: white;
+    cursor: pointer;
+    transition: all 0.95s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  .quote-text {
+    font-size: 18px;
+    line-height: 1.68;
+    margin-bottom: 48px;
+  }
+
+  .author-info {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Distributes space between author info and quote-circle */
+  }
+
+  .quote-circle img {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 11.06px 0px rgba(153, 73, 255, 0.25);
+    margin-right: 0;  /* Ensures no extra space on the right */
+  }
+
+  .author {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .author span {
+    font-size: 15px;
+    opacity: 0.75;
+    display: block;
+    margin-top: 3px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const stack = document.getElementById('fanStack');
+    let cards = Array.from(document.querySelectorAll('.fan-card'));
+
+    function updatePositions() {
+      cards.forEach((card, i) => {
+        const x      = i * 110;
+        const rotate = i * 1; // Increased the rotation factor
+        const z      = i * -90;
+        const scale  = 1 - i * 0.04;
+
+        // Apply more rotation for cards 2 and 3
+        if (i === 1) {
+          card.style.transform = `translateX(${x}px) rotate(${rotate + 10}deg) translateZ(${z}px) scale(${scale})`; // extra 15 degrees
+        } else if (i === 2) {
+          card.style.transform = `translateX(${x}px) rotate(${rotate + 20}deg) translateZ(${z}px) scale(${scale})`; // extra 30 degrees
+        } else if (i === 3) {
+          card.style.transform = `translateX(${x}px) rotate(${rotate + 30}deg) translateZ(${z}px) scale(${scale})`; // extra 45 degrees
+        } else if (i === 4) {
+          card.style.transform = `translateX(${x}px) rotate(${rotate + 40}deg) translateZ(${z}px) scale(${scale})`; // extra 60 degrees
+        } else {
+          card.style.transform = `translateX(${x}px) rotate(${rotate}deg) translateZ(${z}px) scale(${scale})`;
+        }
+
+        card.style.zIndex    = 20 - i;
+      });
+    }
+
+    function rotateForward() {
+      // Take the front card and move it to the back
+      const frontCard = cards.shift();
+      cards.push(frontCard);
+
+      // Re-append in new order
+      cards.forEach(card => stack.appendChild(card));
+
+      updatePositions();
+    }
+
+    // Click anywhere on a card → rotate the stack forward
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        rotateForward();
+      });
+    });
+
+    // Initial layout
+    updatePositions();
+  });
+</script>
