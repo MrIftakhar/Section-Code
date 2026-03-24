@@ -1,0 +1,134 @@
+<div class="counter">
+    <div class="counter-item">
+        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b46608cd1fd91fce2984e5/1773430280225/1.png" alt="downloads" class="counter-image"/>
+        <p class="num">3,<span class="count" data-target="438">0</span></p>
+        <p class="description">DOWNLOADS</p>
+    </div>
+    <div class="counter-item">
+        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b46608a7c6f77d730534db/1773430280230/2.png" alt="tickets" class="counter-image"/>
+        <p class="num">1,<span class="count" data-target="263">0</span></p>
+        <p class="description">TICKETS CLOSED</p>
+    </div>
+    <div class="counter-item">
+        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b46608505ff8273c9e0000/1773430280147/3.png" alt="followers" class="counter-image"/>
+        <p class="num">5,<span class="count" data-target="172">0</span></p>
+        <p class="description">FOLLOWERS</p>
+    </div>
+    <div class="counter-item">
+        <img src="https://static1.squarespace.com/static/69b44138b3e6e6594f08c465/t/69b46608be0afa0e3fb8e1c2/1773430280147/4.png" alt="coffee cups" class="counter-image"/>
+        <p class="num">4,<span class="count" data-target="874">0</span></p>
+        <p class="description">CUPS OF COFFEE</p>
+    </div>
+</div>
+
+<style>
+    .counter {
+        display: flex;
+        flex-wrap: wrap;              /* ← allows items to wrap to new lines */
+        justify-content: center;      /* ← centers items horizontally in each row */
+        align-items: center;          /* ← vertical alignment if needed */
+        gap: 60px 40px;               /* row gap 60px, column gap 40px – adjust as you like */
+        padding: 40px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+
+    .counter-item {
+        text-align: center;
+        flex: 1 1 220px;              /* ← base width ~220–250px, grows/shrinks, min ~220px */
+        max-width: 280px;             /* ← prevents items from getting too wide */
+    }
+
+    .counter-item .num,
+    .counter-item .count {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+        display: block;
+    }
+
+    .counter-item .num {
+        display: flex;
+        justify-content: center;      /* centers the number + comma nicely */
+        align-items: baseline;        /* aligns comma nicely with large digit */
+    }
+
+    .counter-item .description {
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-top: 8px;
+        color: #333;
+    }
+
+    .counter-item .counter-image {
+        width: 120px;                 /* smaller on mobile/desktop – adjust if needed */
+        height: 120px;
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
+
+    /* Mobile – one item per row, fully centered */
+    @media (max-width: 767px) {
+        .counter {
+            flex-direction: column;   /* ← forces vertical stacking */
+            gap: 50px;                /* more breathing room between stacked items */
+            padding: 30px 15px;
+        }
+
+        .counter-item {
+            flex: 1 1 auto;           /* takes full available width */
+            max-width: 100%;          /* full width on mobile */
+            width: 100%;
+        }
+
+        .counter-item .counter-image {
+            width: 100px;
+            height: 100px;
+        }
+
+        .counter-item .num,
+        .counter-item .count {
+            font-size: 2.8rem;        /* slightly smaller numbers on mobile for better fit */
+        }
+    }
+
+    /* Tablet – 2 items per row if space allows */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .counter-item {
+            flex: 1 1 45%;            /* roughly 2 per row */
+        }
+    }
+</style>
+
+<script>
+    const counters = document.querySelectorAll('.count');
+    const speed = 200;  // lower = faster counting
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const current = +counter.innerText;
+                        const increment = target / speed;
+
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current + increment);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+                observer.disconnect(); // run only once when visible
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(document.querySelector('.counter'));
+</script>
