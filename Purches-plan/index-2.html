@@ -1,0 +1,215 @@
+<style>
+    :root {
+        --primary-green: #31B099;
+        --dark-bg: #103d42;
+        --text-gray: #64748b;
+        --border-color: #e2e8f0;
+        --accent-yellow: #EDE597;
+    }
+
+    /* মূল কন্টেইনার - এখানে 1400px সেট করা হয়েছে */
+    .pricing-main-wrapper {
+        width: 100%;
+        max-width: 1400px; /* আপনার চাহিদা অনুযায়ী ১৪০০ পিক্সেল */
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .pricing-toggle-wrapper {
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        padding: 5px;
+        border-radius: 12px;
+        display: inline-flex;
+        gap: 5px;
+        margin-bottom: 50px;
+    }
+
+    .pricing-tab-btn {
+        padding: 10px 30px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1e293b;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .pricing-tab-btn.active {
+        background-color: var(--primary-green);
+        color: #ffffff;
+    }
+
+    .pricing-cards-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 30px;
+        width: 100%;
+        flex-wrap: wrap; 
+    }
+
+    .pricing-card {
+        background: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 40px; /* প্যাডিং একটু বাড়ানো হয়েছে ১৪০০ পিক্সেলের জন্য */
+        flex: 1;
+        min-width: 350px; 
+        max-width: 650px; /* কার্ডগুলো যেন খুব বেশি ছড়িয়ে না যায় */
+        display: flex;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .pricing-card.dark {
+        background-color: var(--dark-bg);
+        color: #fff;
+        border: none;
+    }
+
+    .card-left {
+        flex: 1;
+        border-right: 1px solid var(--border-color);
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dark .card-left {
+        border-right-color: rgba(255,255,255,0.1);
+    }
+
+    .card-right {
+        flex: 1.2;
+        padding-left: 30px;
+    }
+
+    .plan-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .price-wrapper {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .select-btn {
+        background-color: var(--primary-green);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .features-list li {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .pricing-card {
+            flex-direction: column;
+            min-width: 100%;
+        }
+        .card-left {
+            border-right: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-right: 0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .card-right {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="pricing-main-wrapper">
+    <div class="pricing-toggle-wrapper">
+        <button class="pricing-tab-btn active" onclick="updatePrice('monthly', this)">Monthly</button>
+        <button class="pricing-tab-btn" onclick="updatePrice('yearly', this)">Yearly</button>
+    </div>
+    <div class="pricing-cards-container">
+        <div class="pricing-card">
+            <div class="card-left">
+                <div>
+                    <div class="plan-name">Starter Standard</div>
+                    <div class="price-wrapper">$<span id="price-std">85.50</span><span style="font-size:16px; color: var(--text-gray); font-weight: normal;">/mo</span></div>
+                </div>
+                <button class="select-btn">Select Plan</button>
+            </div>
+            <div class="card-right">
+                <ul class="features-list">
+                    <li><span style="color:var(--primary-green)">✓</span> Full digital wallet access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Dashboard analytics access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Refundable package</li>
+                    <li><span style="color:var(--primary-green)">✓</span> 24/7 Customer service</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Investment planning</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Retirement planning</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-card dark">
+            <div class="popular-badge">POPULAR</div>
+            <div class="card-left">
+                <div>
+                    <div class="plan-name">Starter Premium</div>
+                    <div class="price-wrapper">$<span id="price-pre">120.50</span><span style="font-size:16px; opacity: 0.8; font-weight: normal;">/mo</span></div>
+                </div>
+                <button class="select-btn">Select Plan</button>
+            </div>
+            <div class="card-right">
+                <ul class="features-list">
+                    <li><span style="color:var(--primary-green)">✓</span> Full digital wallet access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Dashboard analytics access</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Refundable package</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Priority support</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Investment planning</li>
+                    <li><span style="color:var(--primary-green)">✓</span> Tax optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updatePrice(type, btn) {
+        document.querySelectorAll('.pricing-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const stdPrice = document.getElementById('price-std');
+        const prePrice = document.getElementById('price-pre');
+
+        if (type === 'yearly') {
+            stdPrice.innerText = "850.00";
+            prePrice.innerText = "1200.00";
+        } else {
+            stdPrice.innerText = "85.50";
+            prePrice.innerText = "120.50";
+        }
+    }
+</script>
