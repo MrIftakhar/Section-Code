@@ -1,0 +1,334 @@
+<div class="elegant-logo-slider-container">
+  <div class="elegant-logo-slider-track">
+    <!-- Original 6 logos + duplicate set for seamless loop -->
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+    <!-- Duplicate set for seamless infinite loop -->
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item">
+      <div class="elegant-logo-placeholder">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* স্লাইডারের মেইন কন্টেইনার */
+  .elegant-logo-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+  }
+
+  /* ট্র্যাক যেখানে লোগোগুলো মুভ করবে */
+  .elegant-logo-slider-track {
+    display: flex;
+    animation: elegantStepSlide 5s linear infinite; /* 6s total — no pause */
+    width: max-content;
+    background: #0d0710;
+  }
+
+  /* প্রতিটি লোগো আইটেম */
+  .elegant-logo-item {
+flex-shrink: 0;
+    width: 80px;
+    height: 55px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #171932;
+    border: 1px solid #36203d;
+    border-radius: 16px;
+    padding: 5px;
+  }
+
+  .elegant-logo-placeholder {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    
+  }
+
+  .elegant-logo-placeholder img {
+    height: 100%;
+    object-fit: contain;
+    background: #0c0e27;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  /* Continuous step animation — no pause, 5 steps */
+  @keyframes elegantStepSlide {
+    0%     { transform: translateX(0); }
+    20%    { transform: translateX(calc(-260px * 1)); }
+    40%    { transform: translateX(calc(-260px * 2)); }
+    60%    { transform: translateX(calc(-260px * 3)); }
+    80%    { transform: translateX(calc(-260px * 4)); }
+    100%   { transform: translateX(calc(-260px * 5)); }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .elegant-logo-item { width: 160px; margin: 0 20px; }
+    .elegant-logo-slider-track { width: calc(200px * 10); }
+    @keyframes elegantStepSlide {
+      0%     { transform: translateX(0); }
+      20%    { transform: translateX(calc(-200px * 1)); }
+      40%    { transform: translateX(calc(-200px * 2)); }
+      60%    { transform: translateX(calc(-200px * 3)); }
+      80%    { transform: translateX(calc(-200px * 4)); }
+      100%   { transform: translateX(calc(-200px * 5)); }
+    }
+  }
+</style>
+
+
+
+<div class="elegant-logo-slider-container-1">
+  <div class="elegant-logo-slider-track-1">
+    <!-- Original 6 logos + duplicate set for seamless loop -->
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+    <!-- Duplicate set for seamless infinite loop -->
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb7e15195e49c0ce7e/1773610747227/slack.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fbfb761d35ac129d10/1773610747225/zapier.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb695f9d7e209597fc/1773610747220/notion.png">
+      </div>
+    </div>
+    <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb133f12794fe0e4a4/1773610747232/zapier-2.png">
+      </div>
+    </div>
+        <div class="elegant-logo-item-1">
+      <div class="elegant-logo-placeholder-1">
+        <img src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b726fb29dc105a93b0dd55/1773610747227/figma.png">
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .elegant-logo-slider-container-1 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .elegant-logo-slider-track-1 {
+    display: flex;
+    animation: continuousRightSlide 5s linear infinite; /* adjust duration for speed */
+    width: max-content;
+    background: #0d0710;
+  }
+
+   /* প্রতিটি লোগো আইটেম */
+  .elegant-logo-item-1 {
+flex-shrink: 0;
+    width: 80px;
+    height: 55px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #171932;
+    border: 1px solid #36203d;
+    border-radius: 16px;
+    padding: 5px;
+  }
+
+  .elegant-logo-placeholder-1 {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    
+  }
+
+ .elegant-logo-placeholder-1 img {
+    height: 100%;
+    object-fit: contain;
+    background: #0c0e27;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  /* Continuous movement from left to right (logos appear from left and move right) */
+  @keyframes continuousRightSlide {
+    0% {
+      transform: translateX(-50%); /* start from the duplicate set position */
+    }
+    100% {
+      transform: translateX(0); /* move to the original set */
+    }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .elegant-logo-item-1 {
+      width: 160px;
+      margin: 0 20px;
+    }
+
+    .elegant-logo-placeholder-1 {
+      width: 140px;
+      height: 70px;
+    }
+
+    @keyframes continuousRightSlide {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+  }
+</style>
