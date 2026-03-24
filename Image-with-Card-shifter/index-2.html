@@ -1,0 +1,207 @@
+<!-- HTML -->
+<div class="slider-section">
+  <div class="slider-container">
+    <!-- Background Image Div -->
+    <div class="background-image" id="backgroundImage">
+      <img class="background-content" id="backgroundContent"
+        src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84718d1888d59223de15e/1773684506567/background+%281%29.png"
+        alt="Background Image">
+    </div>
+
+    <!-- Small Image Div -->
+    <div class="small-image-container">
+      <img class="small-image" id="smallImage"
+        src="https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84f50bf413e08b28ffef5/1773686610020/image_1773686509348.png"
+        alt="Small Image">
+    </div>
+
+    <!-- Information Divs (in Horizontal Line) -->
+    <div class="info-line">
+      <div class="info-div" id="info1">
+        <p class="slider-subtitle">/1</p>
+        <h2 class="slider-title">Fast Sign-up</h2>
+        <p class="slider-description">You can join our platform faster with Social Account</p>
+      </div>
+      <div class="info-div" id="info2">
+        <p class="slider-subtitle">/2</p>
+        <h2 class="slider-title">Easy to Generate</h2>
+        <p class="slider-description">Our UI are simple, you can easy to catch up</p>
+      </div>
+      <div class="info-div" id="info3">
+        <p class="slider-subtitle">/3</p>
+        <h2 class="slider-title">Use Specific Tools</h2>
+        <p class="slider-description">Explore Our Dashboard with 50+ Tools and 20+ Team Support Features</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  .slider-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full height of the viewport */
+  }
+
+  .slider-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Background Image Container */
+  .background-image {
+    position: relative;
+    background-image: url('https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84718d1888d59223de15e/1773684506567/background+%281%29.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+
+    .background-content {
+      border-radius: 24px;
+      width: 1248px;
+      height: 420px;
+      border: 1px solid #1f1f38;
+    }
+  }
+
+  /* Small Image Container (at the bottom of the background) */
+  .small-image-container {
+    position: absolute;
+    bottom: 376px;
+    /* 20px from the bottom of the container */
+    width: 80%;
+    /* You can adjust this width */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .small-image {
+    width: 45%;
+    /* Adjust the size of the small image */
+    object-fit: contain;
+    /* Ensures the image fits inside without stretching */
+  }
+
+  /* Information Divs in a Horizontal Line */
+  .info-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1248px;
+    margin-top: 20px;
+  }
+
+  /* Each Info Div */
+  .info-div {
+    padding: 20px;
+    flex: 1;
+    border-top: 1px solid transparent;
+    /* Default border color */
+    margin: 0 10px;
+  }
+
+  /* When a div is active, show it */
+  .info-div.active {
+    display: block;
+    background: #00031a;
+    border-radius: 24px;
+    border-top: 2px solid #5061fa;
+    /* Active div border color */
+    box-shadow: rgb(57, 115, 233) 0px 0px 16px 0px;
+  }
+
+  .slider-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #f4f7ff;
+  }
+
+  .slider-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #4f60fa;
+    letter-spacing: 0.1px;
+  }
+
+  .slider-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #cac9d1;
+    letter-spacing: 0px;
+    margin-bottom: 0px;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backgroundImage = document.getElementById('backgroundImage');
+    const backgroundContent = document.getElementById('backgroundContent');
+    const smallImage = document.getElementById('smallImage');
+    const infoDivs = document.querySelectorAll('.info-div');
+    let currentSlide = 0;
+
+    // List of background images to cycle through (small images at the bottom)
+    const smallImages = [
+      "https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84f50bf413e08b28ffef5/1773686610020/image_1773686509348.png", // Image 1
+      "https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84f50261b535ed3e2bb5f/1773686609890/image_1773686576954.png", // Image 2
+      "https://static1.squarespace.com/static/69b307e60a6a5f64491e6dde/t/69b84f50161aab0cbfd668c5/1773686609942/image_1773686551582.png"  // Image 3
+    ];
+
+    // Information content for each slide
+    const titles = [
+      "Fast Sign-up",
+      "Easy to Generate",
+      "Use Specific Tools"
+    ];
+
+    const subtitles = [
+      "/1",
+      "/2",
+      "/3"
+    ];
+
+    const descriptions = [
+      "You can join our platform faster with Social Account",
+      "Our UI are simple, you can easy to catch up",
+      "Explore Our Dashboard with 50+ Tools and 20+ Team Support Features"
+    ];
+
+    // Update the background image and small image every 6 seconds
+    function changeSlide() {
+      // Hide the current information div
+      infoDivs[currentSlide].classList.remove('active');
+
+      // Move to the next slide
+      currentSlide = (currentSlide + 1) % smallImages.length;
+
+      // Update the small image (bottom)
+      smallImage.src = smallImages[currentSlide];
+
+      // Update the information content
+      document.querySelector('#info' + (currentSlide + 1) + ' .slider-title').innerText = titles[currentSlide];
+      document.querySelector('#info' + (currentSlide + 1) + ' .slider-subtitle').innerText = subtitles[currentSlide];
+      document.querySelector('#info' + (currentSlide + 1) + ' .slider-description').innerText = descriptions[currentSlide];
+
+      // Show the corresponding information div
+      infoDivs[currentSlide].classList.add('active');
+    }
+
+    // Initially show the first slide
+    infoDivs[currentSlide].classList.add('active');
+    smallImage.src = smallImages[currentSlide];
+
+    // Change the slide every 6 seconds
+    setInterval(changeSlide, 6000);
+  });
+</script>
